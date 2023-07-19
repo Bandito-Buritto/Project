@@ -1,8 +1,8 @@
 let numberOfFilms;
 function start() {
-  numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "");
+  numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "").trim();
   while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "");
+    numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "").trim();
   }
 }
 start();
@@ -16,8 +16,8 @@ let personalMovieDB = {
 
 function rememberMyFilms() {
   for (let i = 0; i < 2; i++) {
-    let lastFilm = prompt("Один из последних просмотренных фильмов?");
-    let markOfFilm = prompt("На сколько оцените его");
+    let lastFilm = prompt("Один из последних просмотренных фильмов?").trim();
+    let markOfFilm = prompt("На сколько оцените его").trim();
     if (
       lastFilm != "" &&
       lastFilm.length < 50 &&
@@ -54,7 +54,10 @@ showMyDb(personalMovieDB.privat);
 
 function writeYourGenres() {
   for (let i = 1; i <= 3; i++) {
-    let favouriteGenre = prompt(`Ваш любимый жанр фильма под номер ${i}`, "");
+    let favouriteGenre = prompt(
+      `Ваш любимый жанр фильма под номер ${i}`,
+      ""
+    ).trim();
     personalMovieDB.genres.push(favouriteGenre);
   }
 }
