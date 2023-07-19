@@ -5,7 +5,7 @@ function start() {
     numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "");
   }
 }
-//start();
+start();
 let personalMovieDB = {
   count: numberOfFilms,
   movies: {},
@@ -32,7 +32,7 @@ function rememberMyFilms() {
     }
   }
 }
-//rememberMyFilms();
+rememberMyFilms();
 
 function detectPersonalLevel() {
   if (personalMovieDB.count < 10) {
@@ -43,7 +43,7 @@ function detectPersonalLevel() {
     console.log("Вы киноман");
   }
 }
-//detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyDb(hidden) {
   if (!hidden) {
